@@ -9,4 +9,4 @@
 
 MYIPADD=`curl https://ipinfo.io/ip`
 
-aws ec2 revoke-security-group-ingress --group-name Ubuntu-firewall-settings --protocol tcp --port 22 --cidr $MYIPADD/24
+aws ec2 revoke-security-group-ingress --group-name VPCGROUPNAME --protocol tcp --port 22 --cidr $MYIPADD/24
