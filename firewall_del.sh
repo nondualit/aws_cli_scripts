@@ -13,3 +13,5 @@ read var1
 myip=`curl https://ipinfo.io/ip`
 
 aws ec2 revoke-security-group-ingress --group-name $var1 --protocol tcp --port 22 --cidr $myip/24
+
+aws ec2 describe-security-groups --group-name $var1 | grep 24
