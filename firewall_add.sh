@@ -10,6 +10,6 @@ aws ec2 describe-security-groups --group-ids | grep GroupName
 echo "Enter GroupName: "
 read var1
 
-MYIPADD=`curl https://ipinfo.io/ip`
+myip=`curl https://ipinfo.io/ip`
 
-aws ec2 authorize-security-group-ingress --group-name $var1 --protocol tcp --port 22 --cidr $MYIPADD/24
+aws ec2 authorize-security-group-ingress --group-name $var1 --protocol tcp --port 22 --cidr $myip/24
