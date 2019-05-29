@@ -1,0 +1,11 @@
+#!/bin/bash
+################################################################################
+# Author    : Anibal Ojeda
+# Version   : 1.0
+# Date      : 29-05-2019
+# Description: Add or delete ip from AWS firewall 
+################################################################################
+
+MYIPADD=`curl https://ipinfo.io/ip`
+
+aws ec2 authorize-security-group-ingress --group-name Ubuntu-firewall-settings --protocol tcp --port 22 --cidr $MYIPADD/24
