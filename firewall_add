@@ -4,6 +4,7 @@
 # Version   : 1.0
 # Date      : 29-05-2019
 # Description: Add or delete ip from AWS firewall 
+# More info https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html
 ################################################################################
 
 MYIPADD=`curl https://ipinfo.io/ip`
