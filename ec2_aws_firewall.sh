@@ -10,7 +10,7 @@ aws ec2 describe-security-groups --group-ids | grep GroupName
 echo "Enter GroupName: "
 read var1
 
-myip=`curl https://ipinfo.io/ip > /dev/null 2>&1`
+myip=`curl https://ipinfo.io/ip`
 
 while [ -n "$1" ]; do # while loop starts
 
