@@ -1,8 +1,9 @@
 #!/bin/bash
 ################################################################################
-# Author    : Anibal Ojeda
+# Author    : Anibal Enrique Ojeda Gonzalez
+# url       : www.nondualit.nl
 # Version   : 1.0
-# Date      : 29-05-2019
+# Date      : 30-05-2019
 # Description: Add or delete ip from AWS firewall 
 # More info https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html
 ################################################################################
