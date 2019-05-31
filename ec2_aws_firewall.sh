@@ -26,7 +26,7 @@ while [ -n "$1" ]; do # while loop starts
     -h)  echo "use -a to add your IP address to your AWS ec2 SecurityGroup or -d to delete your IP address from the AWS SecurityGroup" ;; # Help option
  
  
-    *) echo "Option $1 not recognized" ;; # In case you typed a different option other than a,d
+    *) echo "Option $1 not recognized. Use -h for help" ;; # In case you typed a different option other than a,d,h
  
     esac
  
