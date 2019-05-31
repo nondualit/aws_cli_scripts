@@ -4,7 +4,7 @@
 # url       : www.nondualit.nl
 # Version   : 1.0
 # Date      : 30-05-2019
-# Description: Add or delete ip from AWS firewall 
+# Description: Add or delete ip from AWS ec2 VPC Security Group firewall 
 # More info https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html
 ################################################################################
 aws ec2 describe-security-groups --group-ids | grep GroupName
