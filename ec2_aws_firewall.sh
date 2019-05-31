@@ -30,9 +30,8 @@ while [ -n "$1" ]; do # while loop starts
     -d)  aws ec2 revoke-security-group-ingress --group-name $var1 --protocol tcp --port $var2 --cidr $myip/24 ;; # del option
     
     -h)  echo "use -a to add your IP address to your AWS ec2 SecurityGroup or -d to delete your IP address from the AWS SecurityGroup" ;; # Help option
- 
- 
-    *) echo "Option $1 not recognized. Use -h for help" ;; # In case you typed a different option other than a,d,h
+
+     *) echo "Option $1 not recognized. Use -h for help" ;; # In case you typed a different option other than a,d,h
  
     esac
  
