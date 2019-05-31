@@ -10,6 +10,8 @@
 aws ec2 describe-security-groups --group-ids | grep GroupName
 echo "Enter GroupName: "
 read var1
+echo "Enter port number: "
+read var2
 
 myip=`curl https://ipinfo.io/ip`
 
@@ -17,9 +19,9 @@ while [ -n "$1" ]; do # while loop starts
 
     case "$1" in
  
-    -a)  aws ec2 authorize-security-group-ingress --group-name $var1 --protocol tcp --port 22 --cidr $myip/24 ;; # add option
+    -a)  aws ec2 authorize-security-group-ingress --group-name $var1 --protocol tcp --port $var2 --cidr $myip/24 ;; # add option
  
-    -d)  aws ec2 revoke-security-group-ingress --group-name $var1 --protocol tcp --port 22 --cidr $myip/24 ;; # del option
+    -d)  aws ec2 revoke-security-group-ingress --group-name $var1 --protocol tcp --port $var2 --cidr $myip/24 ;; # del option
     
     -h)  echo "use -a to add your IP address to your AWS ec2 SecurityGroup or -d to delete your IP address from the AWS SecurityGroup" ;; # Help option
  
