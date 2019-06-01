@@ -39,5 +39,5 @@ while [ -n "$1" ]; do # while loop starts
  
 done
 
-# Show IP added to VPN Securty Group
+# Show IP added to VPC Securty Group.
 aws ec2 describe-security-groups --group-name $var1 | grep 24
