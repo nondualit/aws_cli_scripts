@@ -16,27 +16,31 @@ while [ -n "$1" ]; do # while loop starts
 
     case "$1" in
  
- # Enter values
-echo "Enter GroupName: "
-read var1
-echo "Enter port number: "
-read var2
 
-# Get your local IP address
-myip=`curl https://ipinfo.io/ip`
+    -a)  
 
-    -a)  aws ec2 authorize-security-group-ingress --group-name $var1 --protocol tcp --port $var2 --cidr $myip/24 ;; # add option
+ 	 # Enter values
+      echo "Enter GroupName: "
+      read var1
+      echo "Enter port number: "
+      read var2
+
+     # Get your local IP address
+    myip=`curl https://ipinfo.io/ip`
+    aws ec2 authorize-security-group-ingress --group-name $var1 --protocol tcp --port $var2 --cidr $myip/24 ;; # add option
  
- # Enter values
-echo "Enter GroupName: "
-read var1
-echo "Enter port number: "
-read var2
 
-# Get your local IP address
-myip=`curl https://ipinfo.io/ip`
+    -d)  
 
-    -d)  aws ec2 revoke-security-group-ingress --group-name $var1 --protocol tcp --port $var2 --cidr $myip/24 ;; # del option
+     # Enter values
+      echo "Enter GroupName: "
+      read var1
+      echo "Enter port number: "
+      read var2
+
+    # Get your local IP address
+    myip=`curl https://ipinfo.io/ip`
+    aws ec2 revoke-security-group-ingress --group-name $var1 --protocol tcp --port $var2 --cidr $myip/24 ;; # del option
     
     -h)  echo "use -a to add your IP address to your AWS ec2 SecurityGroup, -s to show IP address or -d to delete your IP address from the AWS SecurityGroup" ;; # Help option
 
