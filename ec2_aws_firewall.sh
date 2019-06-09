@@ -3,7 +3,7 @@
 ################################################################################
 # Author    : Anibal Enrique Ojeda Gonzalez
 # url       : www.nondualit.nl
-# Version   : 1.1
+# Version   : 2.0
 # Date      : 30-05-2019
 # Description: Add or delete ip from AWS ec2 VPC Security Group firewall 
 # More info https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html
@@ -46,6 +46,3 @@ while [ -n "$1" ]; do # while loop starts
     shift
  
 done
-
-# Show IP added to VPC Securty Group.
-#aws ec2 describe-security-groups --group-name $var1 | grep 24
