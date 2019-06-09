@@ -7,6 +7,9 @@
 # Description: Add or delete ip from AWS ec2 VPC Security Group firewall 
 # More info https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html
 ################################################################################
+#placeholders
+myip=`curl https://ipinfo.io/ip`
+
 # Get VPC Group Names
 aws ec2 describe-security-groups --group-ids | grep GroupName
 
@@ -19,28 +22,20 @@ while [ -n "$1" ]; do # while loop starts
 
     -a)  
 
- 	 # Enter values
-      echo "Enter GroupName: "
+      echo -n "Enter GroupName: "
       read var1
-      echo "Enter port number: "
+      echo -n "Enter port number: "
       read var2
-
-     # Get your local IP address
-    myip=`curl https://ipinfo.io/ip`
-    aws ec2 authorize-security-group-ingress --group-name $var1 --protocol tcp --port $var2 --cidr $myip/24 ;; # add option
+      aws ec2 authorize-security-group-ingress --group-name $var1 --protocol tcp --port $var2 --cidr $myip/24 ;; # add option
  
 
     -d)  
 
-     # Enter values
-      echo "Enter GroupName: "
+      echo -n "Enter GroupName: "
       read var1
-      echo "Enter port number: "
+      echo -n "Enter port number: "
       read var2
-
-    # Get your local IP address
-    myip=`curl https://ipinfo.io/ip`
-    aws ec2 revoke-security-group-ingress --group-name $var1 --protocol tcp --port $var2 --cidr $myip/24 ;; # del option
+      aws ec2 revoke-security-group-ingress --group-name $var1 --protocol tcp --port $var2 --cidr $myip/24 ;; # del option
     
     -h)  echo "use -a to add your IP address to your AWS ec2 SecurityGroup, -s to show IP address or -d to delete your IP address from the AWS SecurityGroup" ;; # Help option
 
