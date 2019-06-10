@@ -6,3 +6,4 @@ Some AWS cli scripts and examples
 - Adding port number as a read option as some of you may have ssh on a different port
 - Reorganizing the whole script
 - Added option -s to show current state
+- Deleting the old add and del scripts 
