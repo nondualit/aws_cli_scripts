@@ -23,8 +23,9 @@ while [ -n "$1" ]; do # while loop starts
       echo  "Enter port number: "
       read var2
       myip=`curl https://ipinfo.io/ip`
-      aws ec2 authorize-security-group-ingress --group-name $var1 --protocol tcp --port $var2 --cidr $myip/24 ;; # add option
- 
+      aws ec2 authorize-security-group-ingress --group-name $var1 --protocol tcp --port $var2 --cidr $myip/24 
+     ssh -i "nondualit_aws_ubuntu_frankfurt.pem" ubuntu@nondualit.nl
+     ;; # add option
 
     -d)  
       aws ec2 describe-security-groups --group-ids | grep GroupName
