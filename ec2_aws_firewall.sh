@@ -38,7 +38,7 @@ while [ -n "$1" ]; do # while loop starts
     
     -h)  echo "use -a to add your IP address to your AWS ec2 SecurityGroup, -s to show IP address or -d to delete your IP address from the AWS SecurityGroup" ;; # Help option
 
-    -s)  aws ec2 describe-security-groups --group-name $var1 | grep 24 ;; # show ip 
+    -s)  aws ec2 describe-security-groups --group-name $var1 | grep 24 | awk '{print $NF}' ;; # show ip 
 
      *) echo "Option $1 not recognized. Use -h for help" ;; # In case you typed a different option other than a,d,h
  
