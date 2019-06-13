@@ -53,7 +53,7 @@ while [ -n "$1" ]; do # while loop starts
 -a to add your IP address to your AWS ec2 SecurityGroup 
 -s to show IP address at you AWS ec2 SecurityGroup
 -d to delete your IP addresses from AWS ec2 SecurityGroup
--dip to remove other address from the AWS iec2 SecurityGroup" ;; # Help option
+-dip to remove other address from the AWS ec2 SecurityGroup" ;; # Help option
 
     -s)  aws ec2 describe-security-groups --group-name $var1 | grep 24 | awk '{print $NF}' ;; # show ip 
 
