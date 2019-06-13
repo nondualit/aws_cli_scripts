@@ -2,6 +2,7 @@
 #set -x
 ################################################################################
 # Author    : Anibal Enrique Ojeda Gonzalez
+# Name      : ec2_aws_firewall.sh 
 # url       : www.nondualit.nl
 # Version   : 2.0
 # Date      : 30-05-2019
@@ -48,7 +49,11 @@ while [ -n "$1" ]; do # while loop starts
       aws ec2 revoke-security-group-ingress --group-name $var1 --protocol tcp --port $var2 --cidr $var3/24 ;; # del option
 
  
-    -h)  echo "use -a to add your IP address to your AWS ec2 SecurityGroup, -s to show IP address or -d to delete your IP address, -dip to remove other address from the AWS SecurityGroup" ;; # Help option
+    -h)  echo "ec2_aws_firewall.sh options 
+-a to add your IP address to your AWS ec2 SecurityGroup 
+-s to show IP address at you AWS ec2 SecurityGroup
+-d to delete your IP addresses from AWS ec2 SecurityGroup
+-dip to remove other address from the AWS iec2 SecurityGroup" ;; # Help option
 
     -s)  aws ec2 describe-security-groups --group-name $var1 | grep 24 | awk '{print $NF}' ;; # show ip 
 
