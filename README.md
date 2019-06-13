@@ -13,5 +13,3 @@ The purpose of this script is simple: My AWS instances runs behind a ec2 Securit
 - Deleting the old add and del scripts 
 - Help option re-done
 - dip (Delete IP from other than your ip
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Zrs_4EZ8UHE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
